@@ -1,4 +1,3 @@
-#!/bin/sh
 #!/bin/bash
 
 echo '***********************************'
@@ -50,7 +49,3 @@ apt-get -y install php5-mysql
 sudo chmod -R gu+w www
 sudo chmod -R guo+w www
 mysql -u root -p
-123456
-CREATE DATABASE fastsubtitle;
-exit
-#etc.
