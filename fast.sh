@@ -59,6 +59,7 @@ apt-get -y install mysql-server
 apt-get -y install php5-mysql
 sudo chmod -R gu+w www
 sudo chmod -R guo+w www
+clear
 echo '***********************************'
 echo '*************Database**************'
 echo '***********************************'
