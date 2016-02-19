@@ -8,17 +8,17 @@ clear
 echo '***********************************'
 echo '**************Upgrade**************'
 echo '***********************************'
-apt-get -y upgrade [packagename]
+apt-get -y upgrade
 clear 
 echo '***********************************'
 echo '***********Ngix İnstall************'
 echo '***********************************'
-apt-get install nginx php5-fpm php5-cli php5-mcrypt git
+apt-get -y install nginx php5-fpm php5-cli php5-mcrypt git
 clear 
 echo '***********************************'
 echo '***********Php İnstall************'
 echo '***********************************'
-apt-get install php5-gd
+apt-get -y install php5-gd
 clear 
 echo '***********************************'
 echo '*************Show Grep*************'
