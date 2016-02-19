@@ -44,8 +44,14 @@ echo '***********************************'
 composer create-project laravel/laravel /var/www/laravel/ 5.2
 chgrp -R www-data /var/www/laravel
 chmod -R 775 /var/www/laravel/storage
+echo '***********************************'
+echo '**************Mysql****************'
+echo '***********************************'
 apt-get -y install mysql-server
 apt-get -y install php5-mysql
 sudo chmod -R gu+w www
 sudo chmod -R guo+w www
+echo '***********************************'
+echo '*************Database**************'
+echo '***********************************'
 mysql -u root -p
