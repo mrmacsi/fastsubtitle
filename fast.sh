@@ -64,13 +64,13 @@ echo '***********************************'
 echo '*************Database**************'
 echo '***********************************'
 mysql -u root -p
+clear
 echo '***********************************'
 echo '**********Composer Update**********'
 echo '***********************************'
 cd ..
 cd var/www/laravel
-composer update
+composer require laravelcollective/html
+composer require intervention/image
 php artisan cache:clear
-chmod -R 777 public/backend/videoImages
-chmod -R 777 public/backend/peopleImages
 
