@@ -71,4 +71,6 @@ cd ..
 cd var/www/laravel
 composer update
 php artisan cache:clear
+chmod -R 777 public/backend/videoImages
+chmod -R 777 public/backend/peopleImages
 
