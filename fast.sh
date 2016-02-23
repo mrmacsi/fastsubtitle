@@ -64,3 +64,11 @@ echo '***********************************'
 echo '*************Database**************'
 echo '***********************************'
 mysql -u root -p
+echo '***********************************'
+echo '**********Composer Update**********'
+echo '***********************************'
+cd ..
+cd var/www/laravel
+composer update
+php artisan cache:clear
+
