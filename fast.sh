@@ -48,7 +48,7 @@ clear
 echo '***********************************'
 echo '***********Laravel 5.2*************'
 echo '***********************************'
-git clone https://gitlab.com/salvadorx/demotest.git /var/www/laravel
+composer create-project laravel/laravel /var/www/laravel/ 5.2
 chgrp -R www-data /var/www/laravel
 chmod -R 775 /var/www/laravel/storage
 clear 
