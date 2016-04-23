@@ -3,7 +3,7 @@ echo '***********************************'
 echo '**************Updating*************'
 echo '***********************************'
 sudo apt-get update
-sudo apt-get -y install nginx php5-fpm php5-cli php5-mcrypt git
+sudo apt-get -y install nginx php5-fpm php5-cli php5-mcrypt git php5-gd
 clear 
 echo '***********************************'
 echo '***********Php İnstall************'
