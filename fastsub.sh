@@ -7,17 +7,17 @@ clear
 echo '***********************************'
 echo '**************Upgrade**************'
 echo '***********************************'
-apt-get -y upgrade
+sudo apt-get -y upgrade
 clear 
 echo '***********************************'
 echo '***********Ngix İnstall************'
 echo '***********************************'
-sudo -y apt-get install nginx php5-fpm php5-cli php5-mcrypt git
+sudo apt-get -y install nginx php5-fpm php5-cli php5-mcrypt git
 clear 
 echo '***********************************'
 echo '***********Php İnstall************'
 echo '***********************************'
-apt-get -y install php5-gd
+sudo apt-get -y install php5-gd
 sudo nano /etc/php5/fpm/php.ini
 sudo php5enmod mcrypt
 sudo service php5-fpm restart
