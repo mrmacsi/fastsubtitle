@@ -69,5 +69,6 @@ clear
 echo '***********************************'
 echo '**********Composer Update**********'
 echo '***********************************'
+cd /var/www/laravel
 composer update
 php artisan cache:clear
