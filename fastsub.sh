@@ -46,8 +46,6 @@ echo '***********************************'
 echo '**************GitLab***************'
 echo '***********************************'
 git clone https://gitlab.com/salvadorx/demotest.git /var/www/laravel
-mv /var/www/laravel/demotest/* /var/www/laravel
-rm -rf /var/www/laravel/demotest
 sudo chown -R :www-data /var/www/laravel
 sudo chmod -R 775 /var/www/laravel/storage
 cd /var/www/laravel
