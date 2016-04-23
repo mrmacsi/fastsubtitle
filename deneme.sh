@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo -y apt-get update
+sudo apt-get update
 sudo -y apt-get install nginx php5-fpm php5-cli php5-mcrypt git
 sudo nano /etc/php5/fpm/php.ini
 sudo php5enmod mcrypt
