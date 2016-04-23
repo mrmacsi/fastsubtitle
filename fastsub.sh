@@ -3,21 +3,11 @@ echo '***********************************'
 echo '**************Updating*************'
 echo '***********************************'
 sudo apt-get update
-clear 
-echo '***********************************'
-echo '**************Upgrade**************'
-echo '***********************************'
-sudo apt-get -y upgrade
-clear 
-echo '***********************************'
-echo '***********Ngix İnstall************'
-echo '***********************************'
 sudo apt-get -y install nginx php5-fpm php5-cli php5-mcrypt git
 clear 
 echo '***********************************'
 echo '***********Php İnstall************'
 echo '***********************************'
-sudo apt-get -y install php5-gd
 sudo nano /etc/php5/fpm/php.ini
 sudo php5enmod mcrypt
 sudo service php5-fpm restart
@@ -32,8 +22,7 @@ clear
 echo '***********************************'
 echo '************Restarting*************'
 echo '***********************************'
-service php5-fpm restart
-service nginx restart
+sudo service nginx restart
 clear 
 echo '***********************************'
 echo '*************Composer**************'
@@ -70,3 +59,4 @@ echo '***********************************'
 cd /var/www/laravel
 composer update
 php artisan cache:clear
+php artisan migrate:refresh --seed
