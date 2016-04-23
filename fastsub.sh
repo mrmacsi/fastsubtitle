@@ -8,7 +8,8 @@ clear
 echo '***********************************'
 echo '***********Php İnstall************'
 echo '***********************************'
-sudo nano /etc/php5/fpm/php.ini
+curl -O https://raw.githubusercontent.com/mrmacsi/fastsubtitle/master/php.ini
+mv php.ini /etc/php5/fpm/
 sudo php5enmod mcrypt
 sudo service php5-fpm restart
 clear 
@@ -17,7 +18,8 @@ echo '*************Show Grep*************'
 echo '***********************************'
 php -i | grep -i gd
 sudo mkdir -p /var/www/laravel
-sudo nano /etc/nginx/sites-available/default
+curl -O https://raw.githubusercontent.com/mrmacsi/fastsubtitle/master/default
+mv default /etc/nginx/sites-available/
 clear 
 echo '***********************************'
 echo '************Restarting*************'
