@@ -40,20 +40,24 @@ git clone https://gitlab.com/salvadorx/demotest.git /var/www/laravel
 sudo chown -R :www-data /var/www/laravel
 sudo chmod -R 775 /var/www/laravel/storage
 cd /var/www/laravel
+curl -O https://raw.githubusercontent.com/mrmacsi/fastsubtitle/master/.env
+mv .env /var/www/laravel
 composer install
 clear 
 echo '***********************************'
 echo '**************Mysql****************'
 echo '***********************************'
-apt-get -y install mysql-server
+sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password 123456'
+sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password 123456'
+apt-get -y install mysql-server-5.5
 apt-get -y install php5-mysql
-sudo chmod -R gu+w /var/www/
-sudo chmod -R guo+w /var/www/
 clear
 echo '***********************************'
 echo '*************Database**************'
 echo '***********************************'
-mysql -u root -p
+mysql --host="localhost" --user=root --password=123456  -e "create database fastsubtitle;"
+sudo chmod -R gu+w /var/www/
+sudo chmod -R guo+w /var/www/
 clear
 echo '***********************************'
 echo '**********Composer Update**********'
