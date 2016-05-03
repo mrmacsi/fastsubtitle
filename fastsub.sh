@@ -46,8 +46,8 @@ clear
 echo '***********************************'
 echo '**************Mysql****************'
 echo '***********************************'
-sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password 123456'
-sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password 123456'
+echo "mysql-server-5.5 mysql-server/root_password password 123456" | debconf-set-selections
+echo "mysql-server-5.5 mysql-server/root_password_again password 123456" | debconf-set-selections
 apt-get -y install mysql-server-5.5
 apt-get -y install php5-mysql
 clear
