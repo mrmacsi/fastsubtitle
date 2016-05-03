@@ -41,7 +41,6 @@ sudo chown -R :www-data /var/www/laravel
 sudo chmod -R 775 /var/www/laravel/storage
 cd /var/www/laravel
 curl -O https://raw.githubusercontent.com/mrmacsi/fastsubtitle/master/.env
-mv .env /var/www/laravel
 composer install
 clear 
 echo '***********************************'
