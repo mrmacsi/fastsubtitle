@@ -59,6 +59,11 @@ sudo chmod -R gu+w /var/www/
 sudo chmod -R guo+w /var/www/
 clear
 echo '***********************************'
+echo '********Phpmyadmin Install*********'
+echo '***********************************'
+sudo apt-get install phpmyadmin
+clear
+echo '***********************************'
 echo '**********Composer Update**********'
 echo '***********************************'
 cd /var/www/laravel
