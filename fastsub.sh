@@ -62,6 +62,8 @@ echo '***********************************'
 echo '********Phpmyadmin Install*********'
 echo '***********************************'
 sudo apt-get install phpmyadmin
+curl -O https://raw.githubusercontent.com/mrmacsi/fastsubtitle/master/nginx.conf
+mv nginx.conf /etc/nginx/
 clear
 echo '***********************************'
 echo '**********Composer Update**********'
