@@ -46,15 +46,15 @@ clear
 echo '***********************************'
 echo '**************Mysql****************'
 echo '***********************************'
-echo "mysql-server-5.5 mysql-server/root_password password 123456" | debconf-set-selections
-echo "mysql-server-5.5 mysql-server/root_password_again password 123456" | debconf-set-selections
+echo "mysql-server-5.5 mysql-server/root_password password 123984" | debconf-set-selections
+echo "mysql-server-5.5 mysql-server/root_password_again password 123984" | debconf-set-selections
 apt-get -y install mysql-server-5.5
 apt-get -y install php5-mysql
 clear
 echo '***********************************'
 echo '*************Database**************'
 echo '***********************************'
-mysql --host="localhost" --user=root --password=123456  -e "create database fastsubtitle;"
+mysql --host="localhost" --user=root --password=123984  -e "create database fastsubtitle;"
 sudo chmod -R gu+w /var/www/
 sudo chmod -R guo+w /var/www/
 clear
