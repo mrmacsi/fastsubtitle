@@ -75,3 +75,5 @@ cd /var/www/laravel
 composer update
 php artisan cache:clear
 php artisan migrate:refresh --seed
+service php5-fpm restart
+service nginx restart
