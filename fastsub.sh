@@ -69,6 +69,9 @@ echo '***********************************'
 echo '**********Composer Update**********'
 echo '***********************************'
 cd /var/www/laravel
+/bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
+/sbin/mkswap /var/swap.1
+/sbin/swapon /var/swap.1
 composer update
 php artisan cache:clear
 php artisan migrate:refresh --seed
