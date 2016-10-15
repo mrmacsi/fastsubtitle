@@ -72,6 +72,7 @@ cd /var/www/laravel
 sudo chown $(whoami):www-data . -R
 sudo chown www-data: storage -R
 chmod -R 777 public/backend/peopleImages/
+chmod -R 777 public/backend/videoImages/
 /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
 /sbin/mkswap /var/swap.1
 /sbin/swapon /var/swap.1
