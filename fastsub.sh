@@ -69,11 +69,14 @@ echo '***********************************'
 echo '**********Composer Update**********'
 echo '***********************************'
 cd /var/www/laravel
+sudo chown $(whoami):www-data . -R
+sudo chown www-data: storage -R
 /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
 /sbin/mkswap /var/swap.1
 /sbin/swapon /var/swap.1
 composer update
 php artisan cache:clear
+php artisan optimize
 php artisan migrate:refresh --seed
 service php5-fpm restart
 service nginx restart
