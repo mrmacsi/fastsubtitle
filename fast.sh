@@ -1,76 +1,69 @@
 #!/bin/bash
-
 echo '***********************************'
 echo '**************Updating*************'
 echo '***********************************'
-apt-get update  # To get the latest package lists
-clear 
-echo '***********************************'
-echo '**************Upgrade**************'
-echo '***********************************'
-apt-get -y upgrade
-clear 
-echo '***********************************'
-echo '***********Ngix İnstall************'
-echo '***********************************'
-apt-get -y install nginx php5-fpm php5-cli php5-mcrypt git
+sudo apt-get update
+sudo apt-get -y install nginx php5-fpm php5-cli php5-mcrypt git php5-gd
 clear 
 echo '***********************************'
 echo '***********Php İnstall************'
 echo '***********************************'
-apt-get -y install php5-gd
+curl -O https://raw.githubusercontent.com/mrmacsi/fastsubtitle/master/php.ini
+mv php.ini /etc/php5/fpm/
+sudo php5enmod mcrypt
+sudo service php5-fpm restart
 clear 
 echo '***********************************'
 echo '*************Show Grep*************'
 echo '***********************************'
 php -i | grep -i gd
-cd ..
-mkdir /var/www
-mkdir /var/www/laravel
-nano /etc/nginx/sites-available/default
-nano /etc/php5/fpm/php.ini
+sudo mkdir -p /var/www/laravel
+curl -O https://raw.githubusercontent.com/mrmacsi/fastsubtitle/master/default
+mv default /etc/nginx/sites-available/
 clear 
 echo '***********************************'
 echo '************Restarting*************'
 echo '***********************************'
-service php5-fpm restart
-service nginx restart
+sudo service nginx restart
 clear 
 echo '***********************************'
 echo '*************Composer**************'
 echo '***********************************'
+cd ~
 curl -sS https://getcomposer.org/installer | php
-mv composer.phar /usr/local/bin/composer
-dd if=/dev/zero of=/swapfile bs=1024 count=512k
-mkswap /swapfile
-swapon /swapfile
+sudo mv composer.phar /usr/local/bin/composer
 clear 
+echo '***********************************'
+echo '**************GitLab***************'
+echo '***********************************'
 echo '***********************************'
 echo '***********Laravel 5.2*************'
 echo '***********************************'
 composer create-project laravel/laravel /var/www/laravel/ 5.2
-chgrp -R www-data /var/www/laravel
-chmod -R 775 /var/www/laravel/storage
+sudo chown -R :www-data /var/www/laravel
+sudo chmod -R 775 /var/www/laravel/storage
+cd /var/www/laravel
+curl -O https://raw.githubusercontent.com/mrmacsi/fastsubtitle/master/.env
+composer install
 clear 
 echo '***********************************'
 echo '**************Mysql****************'
 echo '***********************************'
-apt-get -y install mysql-server
+echo "mysql-server-5.5 mysql-server/root_password password 123984" | debconf-set-selections
+echo "mysql-server-5.5 mysql-server/root_password_again password 123984" | debconf-set-selections
+apt-get -y install mysql-server-5.5
 apt-get -y install php5-mysql
-sudo chmod -R gu+w www
-sudo chmod -R guo+w www
 clear
 echo '***********************************'
 echo '*************Database**************'
 echo '***********************************'
-mysql -u root -p
+mysql --host="localhost" --user=root --password=123984  -e "create database fastsubtitle;"
+sudo chmod -R gu+w /var/www/
+sudo chmod -R guo+w /var/www/
 clear
 echo '***********************************'
 echo '**********Composer Update**********'
 echo '***********************************'
 cd ..
 cd var/www/laravel
-composer require laravelcollective/html
-composer require intervention/image
-php artisan cache:clear
-
+composer require yandex/translate-api
