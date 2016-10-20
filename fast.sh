@@ -39,7 +39,7 @@ echo '***********************************'
 echo '***********************************'
 echo '***********Laravel 5.2*************'
 echo '***********************************'
-composer create-project laravel/laravel /var/www/laravel/ 5.2
+composer create-project --prefer-dist laravel/laravel /var/www/laravel/ "5.2.*"
 sudo chown -R :www-data /var/www/laravel
 sudo chmod -R 775 /var/www/laravel/storage
 cd /var/www/laravel
