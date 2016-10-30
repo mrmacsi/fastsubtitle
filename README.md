@@ -1,5 +1,4 @@
 # fastsubtitle
 
-This project is on gitlab.com
-You can see the commits
-https://gitlab.com/salvadorx/demotest.git
+This project is private on gitlab.com
+https://gitlab.com/salvadorx/fastsubtitle.git
