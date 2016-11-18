@@ -36,7 +36,7 @@ clear
 echo '***********************************'
 echo '**************GitLab***************'
 echo '***********************************'
-git clone https://gitlab.com/salvadorx/demotest.git /var/www/laravel
+git clone https://gitlab.com/salvadorx/fastsubtitle.git /var/www/laravel
 sudo chown -R :www-data /var/www/laravel
 sudo chmod -R 775 /var/www/laravel/storage
 sudo chmod -R 775 /var/www/laravel/bootstrap
