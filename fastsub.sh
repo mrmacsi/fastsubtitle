@@ -38,8 +38,8 @@ echo '**************GitLab***************'
 echo '***********************************'
 git clone https://gitlab.com/salvadorx/fastsubtitle.git /var/www/laravel
 sudo chown -R :www-data /var/www/laravel
-sudo chmod -R 775 /var/www/laravel/storage
-sudo chmod -R 775 /var/www/laravel/bootstrap
+sudo chmod -R 777 /var/www/laravel/storage
+sudo chmod -R 777 /var/www/laravel/bootstrap
 cd /var/www/laravel
 curl -O https://raw.githubusercontent.com/mrmacsi/fastsubtitle/master/.env
 composer install
