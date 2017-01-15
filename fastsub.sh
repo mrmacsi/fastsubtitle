@@ -69,11 +69,10 @@ clear
 echo '***********************************'
 echo '**********Composer Update**********'
 echo '***********************************'
-cd /var/www/laravel
-sudo chown $(whoami):www-data . -R
-sudo chown www-data: storage -R
-chmod -R 777 public/backend/peopleImages/
-chmod -R 777 public/backend/videoImages/
+sudo chown $(whoami):www-data /var/www/laravel/. -R
+sudo chown www-data: /var/www/laravel/storage -R
+chmod -R 777 /var/www/laravel/public/backend/peopleImages/
+chmod -R 777 /var/www/laravel/videoImages/
 /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
 /sbin/mkswap /var/swap.1
 /sbin/swapon /var/swap.1
