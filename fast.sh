@@ -16,6 +16,7 @@ sudo chmod -R 777 /var/www/laravel/storage
 sudo chmod -R 777 /var/www/laravel/bootstrap
 curl -O https://raw.githubusercontent.com/mrmacsi/fastsubtitle/master/.env
 sudo mv .env /var/www/laravel
+cd /var/www/laravel
 composer install
 mysql --host="localhost" --user=root --password=123984  -e "create database fastsubtitle;"
 curl -O https://raw.githubusercontent.com/mrmacsi/fastsubtitle/master/default
@@ -33,7 +34,6 @@ php artisan optimize
 php artisan migrate
 service php7.0-fpm restart
 service nginx restart
-clear
 echo '***********************************'
 echo '**********Setup Complated**********'
 echo '***********************************'
