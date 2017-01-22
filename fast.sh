@@ -22,7 +22,7 @@ mysql --host="localhost" --user=root --password=123984  -e "create database fast
 curl -O https://raw.githubusercontent.com/mrmacsi/fastsubtitle/master/default
 mv default /etc/nginx/sites-available/
 curl -O https://raw.githubusercontent.com/mrmacsi/fastsubtitle/master/php7/php.ini
-mv php.ini /etc/php/7.0/
+mv php.ini /etc/php/7.0/fpm/
 sudo chown $(whoami):www-data /var/www/laravel/. -R
 sudo chown www-data: /var/www/laravel/storage -R
 chmod -R 777 /var/www/laravel/public/backend/peopleImages/
