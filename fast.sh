@@ -6,11 +6,11 @@ echo "mysql-server-5.5 mysql-server/root_password_again password 123984" | debco
 sudo apt-get -y update && apt-get -y --purge autoremove && apt-get -y install git nginx php7.0-fpm  php7.0-mysql php7.0-cli php7.0-curl php7.0-gd php7.0-json php7.0-mcrypt php7.0-xml php7.0-mbstring zip unzip php7.0-zip mysql-server-5.5
 service php7.0-fpm restart
 service nginx restart
-sudo chmod -R gu+w /var/www/
-sudo chmod -R guo+w /var/www/
 curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
 git clone https://gitlab.com/salvadorx/fastsubtitle.git /var/www/laravel
+sudo chmod -R gu+w /var/www/
+sudo chmod -R guo+w /var/www/
 sudo chown -R :www-data /var/www/laravel
 sudo chmod -R 777 /var/www/laravel/storage
 sudo chmod -R 777 /var/www/laravel/bootstrap
