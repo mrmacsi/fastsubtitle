@@ -20,8 +20,6 @@ cd /var/www/laravel
 composer install
 mysql --host="localhost" --user=root --password=123984  -e "create database fastsubtitle;"
 curl -O https://raw.githubusercontent.com/mrmacsi/fastsubtitle/master/default
-mv default /etc/nginx/sites-available/
-curl -O https://raw.githubusercontent.com/mrmacsi/fastsubtitle/master/php7/php.ini
 mv php.ini /etc/php/7.0/fpm/
 sudo chown $(whoami):www-data /var/www/laravel/. -R
 sudo chown www-data: /var/www/laravel/storage -R
@@ -35,6 +33,10 @@ composer update
 php artisan cache:clear
 php artisan optimize
 php artisan migrate
+service php7.0-fpm restart
+service nginx restart
+mv default /etc/nginx/sites-available/
+curl -O https://raw.githubusercontent.com/mrmacsi/fastsubtitle/master/php7/php.ini
 service php7.0-fpm restart
 service nginx restart
 echo '***********************************'
