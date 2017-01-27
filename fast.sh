@@ -4,6 +4,7 @@ sudo LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php
 echo "mysql-server-5.5 mysql-server/root_password password 123984" | debconf-set-selections
 echo "mysql-server-5.5 mysql-server/root_password_again password 123984" | debconf-set-selections
 sudo apt-get -y update && apt-get -y --purge autoremove && apt-get -y install git nginx php7.0-fpm  php7.0-mysql php7.0-cli php7.0-curl php7.0-gd php7.0-json php7.0-mcrypt php7.0-xml php7.0-mbstring zip unzip php7.0-zip mysql-server-5.5
+apt-get -y install php5-gd
 service php7.0-fpm restart
 service nginx restart
 curl -sS https://getcomposer.org/installer | php
