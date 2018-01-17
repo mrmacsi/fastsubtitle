@@ -104,3 +104,21 @@ setInterval(function(){ getCSV(); }, 20000);
 compressed
 
 var scroll=setInterval(function(){var e=$(document).height();$("html, body").animate({scrollTop:$(document).height()},3e3,function(){e==$(document).height()&&$("html, body").animate({scrollTop:0})})},8e3),checker=setInterval(function(){$(".button-secondary-small").not(".found").each(function(){var e=this,n=0,t=["software","recruitment","ceo","react","angular","java","cto "," ios","web","ux ","technology","android","programmer","coder","developer","symfony","laravel","front-end","stack","nodejs","php","asp","founder"],o=$(this).parent().prev().children().find("a span").last().text().toLowerCase();$.each(t,function(t,a){-1!=o.indexOf(a)&&-1==o.indexOf("3d")&&-1==o.indexOf("business")&&-1==o.indexOf("é")&&($(e).parent().parent().addClass("found").css({background:"yellow"}),n++)}),0==n?$(e).parent().parent().addClass("remove").css({background:"#f77474"}):n=0})},18e3),add=function e(){var n=Math.round(1e4*Math.random())+1100;setTimeout(function(){$(document).height();$("li.found").first().find(".button-secondary-small").click(),$("li.found").first().remove(),e()},n)};add();var close=function e(){var n=Math.round(1e3*Math.random())+100;setTimeout(function(){$("li.remove").first().find(".mn-pymk-list__close-btn").click(),e()},n)};close();
+
+
+var checker = setInterval(function () {
+$('.mn-person-card.connection-card.ember-view .mn-person-info__details').each(function(){
+	var that = this;
+	var count = 0;
+	var except = ['business','é','chez','ë','ï'];
+	var text = $(this).find("a span:nth-child(2)").text().toLowerCase().trim()+' '+$(this).find("a span").last().text().toLowerCase().trim(); 
+	$.each(except,function(key,value){
+		if(text.indexOf(value)!=-1){
+			count++;
+			console.log(text)
+			$(that).css({'background':'yellow'});
+		}
+	});
+});
+}
+, 18000);
