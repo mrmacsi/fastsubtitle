@@ -13,7 +13,7 @@ $.each(keys,function(key,value){if(text.indexOf(value)!=-1){count++;}});
 $.each(except,function(key,value){if(text.indexOf(value)!=-1){count=0;}});
 if(count==0){$(that).addClass("remove").css({'background':'#f77474'});}else{
 	$(that).addClass("found").css({'background':'yellow'});count=0;}
-});}, 5000);
+});}, 10000);
 
 var close = function loopClose() {
     var rand = Math.round(Math.random() * 1000) + 100;
@@ -103,8 +103,7 @@ setInterval(function(){ getCSV(); }, 20000);
 
 compressed
 
-var scroll=setInterval(function(){var e=$(document).height();$("html, body").animate({scrollTop:$(document).height()},3e3,function(){e==$(document).height()&&$("html, body").animate({scrollTop:0})})},8e3),checker=setInterval(function(){$(".button-secondary-small").not(".found").each(function(){var e=this,n=0,t=["software","recruitment","ceo","react","angular","java","cto "," ios","web","ux ","technology","android","programmer","coder","developer","symfony","laravel","front-end","stack","nodejs","php","asp","founder"],o=$(this).parent().prev().children().find("a span").last().text().toLowerCase();$.each(t,function(t,a){-1!=o.indexOf(a)&&-1==o.indexOf("3d")&&-1==o.indexOf("business")&&-1==o.indexOf("é")&&($(e).parent().parent().addClass("found").css({background:"yellow"}),n++)}),0==n?$(e).parent().parent().addClass("remove").css({background:"#f77474"}):n=0})},18e3),add=function e(){var n=Math.round(1e4*Math.random())+1100;setTimeout(function(){$(document).height();$("li.found").first().find(".button-secondary-small").click(),$("li.found").first().remove(),e()},n)};add();var close=function e(){var n=Math.round(1e3*Math.random())+100;setTimeout(function(){$("li.remove").first().find(".mn-pymk-list__close-btn").click(),e()},n)};close();
-
+var scroll=setInterval(function(){var e=$(document).height();$("html, body").animate({scrollTop:$(document).height()},3e3,function(){e==$(document).height()&&$("html, body").animate({scrollTop:0})})},8e3),checker=setInterval(function(){$(".mn-pymk-list__card.display-flex.flex-column").not(".found").each(function(){var e=this,n=0,t=["software","recruitment","ceo","react","angular","java","cto "," ios","web","ux ","technology","android","programmer","coder","developer","symfony","laravel","front-end","stack","nodejs","php","asp","founder"],o=["3d","business","é","chez","ç","ş","ü","ğ","ö","ë","ï"],a=$(this).find("div a span:nth-child(2)").text().toLowerCase().trim()+" "+$(this).find("div a span").last().text().toLowerCase().trim();$.each(t,function(e,t){-1!=a.indexOf(t)&&n++}),$.each(o,function(e,t){-1!=a.indexOf(t)&&(n=0)}),0==n?$(e).addClass("remove").css({background:"#f77474"}):($(e).addClass("found").css({background:"yellow"}),n=0)})},1e4),close=function e(){var n=Math.round(1e3*Math.random())+100;setTimeout(function(){$("li.remove").first().find(".mn-pymk-list__close-btn").click(),e()},n)};close();var add=function e(){var n=Math.round(1e4*Math.random())+1100;setTimeout(function(){$(document).height();$("li.found").first().find(".button-secondary-small").click(),$("li.found").first().remove(),e()},n)};add();
 
 var checker = setInterval(function () {
 $('.mn-person-card.connection-card.ember-view .mn-person-info__details').each(function(){
@@ -123,4 +122,3 @@ $('.mn-person-card.connection-card.ember-view .mn-person-info__details').each(fu
 }
 , 18000);
 
-var scroll=setInterval(function(){var e=$(document).height();$("html, body").animate({scrollTop:$(document).height()},3e3,function(){e==$(document).height()&&$("html, body").animate({scrollTop:0})})},8e3),checker=setInterval(function(){$(".mn-pymk-list__card.display-flex.flex-column").not(".found").each(function(){var e=this,n=0,t=["software","recruitment","ceo","react","angular","java","cto "," ios","web","ux ","technology","android","programmer","coder","developer","symfony","laravel","front-end","stack","nodejs","php","asp","founder"],o=["3d","business","é","chez","ç","ş","ü","ğ","ö","ë","ï"],a=$(this).find("div a span:nth-child(2)").text().toLowerCase().trim()+" "+$(this).find("div a span").last().text().toLowerCase().trim();$.each(t,function(e,t){-1!=a.indexOf(t)&&n++}),$.each(o,function(e,t){-1!=a.indexOf(t)&&(n=0)}),0==n?$(e).addClass("remove").css({background:"#f77474"}):($(e).addClass("found").css({background:"yellow"}),n=0)})},5e3),close=function e(){var n=Math.round(1e3*Math.random())+100;setTimeout(function(){$("li.remove").first().find(".mn-pymk-list__close-btn").click(),e()},n)};close();var add=function e(){var n=Math.round(1e4*Math.random())+1100;setTimeout(function(){$(document).height();$("li.found").first().find(".button-secondary-small").click(),$("li.found").first().remove(),e()},n)};add();
