@@ -11,8 +11,8 @@ var that = this,count=0, keys = ["software","recruitment","ceo","react","angular
 except = ['3d','business','é','chez','ç','ş','ü','ğ','ö','ë','ï'], text = $(this).find("div a span:nth-child(2)").text().toLowerCase().trim() +' '+$(this).find("div a span").last().text().toLowerCase().trim(); 
 $.each(keys,function(key,value){if(text.indexOf(value)!=-1){count++;}});
 $.each(except,function(key,value){if(text.indexOf(value)!=-1){count=0;}});
-if(count==0){$(that).addClass("remove").css({'background':'#f77474'});}else{
-	$(that).addClass("found").css({'background':'yellow'});count=0;}
+if(count==0){$(that).addClass("remove").find(".lazy-image").css({'border': '3px solid red'});}else{
+	$(that).addClass("found").find(".lazy-image").css({'border': '3px solid green'});count=0;}
 });}, 10000);
 
 var close = function loopClose() {
@@ -36,8 +36,7 @@ var add = function loop() {
 
 compressed 
 
-var scroll=setInterval(function(){var e=$(document).height();$("html, body").animate({scrollTop:$(document).height()},1e3,function(){e==$(document).height()&&$("html, body").animate({scrollTop:0})})},4e3),checker=setInterval(function(){$(".mn-pymk-list__card.display-flex.flex-column").not(".found").each(function(){var e=this,n=0,t=["software","recruitment","ceo","react","angular","java","cto "," ios","web","ux ","technology","android","programmer","coder","developer","symfony","laravel","front-end","stack","nodejs","php","asp","founder"],o=["3d","business","é","chez","ç","ş","ü","ğ","ö","ë","ï"],a=$(this).find("div a span:nth-child(2)").text().toLowerCase().trim()+" "+$(this).find("div a span").last().text().toLowerCase().trim();$.each(t,function(e,t){-1!=a.indexOf(t)&&n++}),$.each(o,function(e,t){-1!=a.indexOf(t)&&(n=0)}),0==n?$(e).addClass("remove").css({background:"#f77474"}):($(e).addClass("found").css({background:"yellow"}),n=0)})},1e4),close=function e(){var n=Math.round(1e3*Math.random())+300;setTimeout(function(){$("li.remove").first().find(".mn-pymk-list__close-btn").click(),e()},n)};close();var add=function e(){var n=Math.round(1e4*Math.random())+1100;setTimeout(function(){$(document).height();$("li.found").first().find(".button-secondary-small").click(),$("li.found").first().remove(),e()},n)};add();
-
+var scroll=setInterval(function(){var e=$(document).height();$("html, body").animate({scrollTop:$(document).height()},1e3,function(){e==$(document).height()&&$("html, body").animate({scrollTop:0})})},4e3),checker=setInterval(function(){$(".mn-pymk-list__card.display-flex.flex-column").not(".found").each(function(){var e=this,n=0,t=["software","recruitment","ceo","react","angular","java","cto "," ios","web","ux ","technology","android","programmer","coder","developer","symfony","laravel","front-end","stack","nodejs","php","asp","founder"],o=["3d","business","é","chez","ç","ş","ü","ğ","ö","ë","ï"],a=$(this).find("div a span:nth-child(2)").text().toLowerCase().trim()+" "+$(this).find("div a span").last().text().toLowerCase().trim();$.each(t,function(e,t){-1!=a.indexOf(t)&&n++}),$.each(o,function(e,t){-1!=a.indexOf(t)&&(n=0)}),0==n?$(e).addClass("remove").find(".lazy-image").css({border:"3px solid red"}):($(e).addClass("found").find(".lazy-image").css({border:"3px solid green"}),n=0)})},1e4),close=function e(){var n=Math.round(1e3*Math.random())+300;setTimeout(function(){$("li.remove").first().find(".mn-pymk-list__close-btn").click(),e()},n)};close();var add=function e(){var n=Math.round(1e4*Math.random())+1100;setTimeout(function(){$(document).height();$("li.found").first().find(".button-secondary-small").click(),$("li.found").first().remove(),e()},n)};add();
 clearInterval(scroll);clearInterval(checker);
 
 var checker = setInterval(function () {
