@@ -8,7 +8,7 @@ var scroll = setInterval(function () {
 		
 var checker = setInterval(function () {$('.mn-pymk-list__card.display-flex.flex-column').not(".found").each(function(){
 var that = this,count=0, keys = ["software","recruitment","ceo","react","angular","java","cto "," ios","web","ux ","technology","android","programmer","coder","developer","symfony","laravel","front-end","stack","nodejs","php","asp","founder"],
-except = ['3d','business','é','chez','ç','ş','ü','ğ','ö','ë','ï'], text = $(this).find("div a span:nth-child(2)").text().toLowerCase().trim() +' '+$(this).find("div a span").last().text().toLowerCase().trim(); 
+except = ['3d','business','é','chez','tunusia','mohammed','muhamed','ç','ş','ü','ğ','ö','ë','ï'], text = $(this).find("div a span:nth-child(2)").text().toLowerCase().trim() +' '+$(this).find("div a span").last().text().toLowerCase().trim(); 
 $.each(keys,function(key,value){if(text.indexOf(value)!=-1){count++;}});
 $.each(except,function(key,value){if(text.indexOf(value)!=-1){count=0;}});
 if(count==0){$(that).addClass("remove").find(".lazy-image").css({'border': '3px solid red'});}else{
