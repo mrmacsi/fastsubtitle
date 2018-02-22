@@ -175,9 +175,7 @@ function go(count){
     }
 }
 go(now);
-
-
-
+var counter=$("li.mn-person-card.connection-card.ember-view").length,now=55;function go(e){if(e>counter)var n=setInterval(function(){$("html, body").animate({scrollTop:$(document).height()},1e3),counter=$("li.mn-person-card.connection-card.ember-view").length,clearInterval(n),go(now)},1e3);else{$("li.mn-person-card.connection-card.ember-view:eq("+e+")").find("a").click();var o=setInterval(function(){if(clearInterval(o),console.log(e),-1!=$(".pv-top-card-section__location").text().toLowerCase().indexOf("india")||-1!=$(".pv-top-card-section__location").text().toLowerCase().indexOf("tunisia")||-1!=$(".pv-top-card-section__location").text().toLowerCase().indexOf("france")){$(".pv-s-profile-actions__overflow-toggle").click(),$(".pv-s-profile-actions__label:eq(3)").click(),$(".pv-s-profile-actions__label:eq(5)").click();var n=setInterval(function(){clearInterval(n),-1!=window.history.state.path.indexOf("/in/")&&history.back(),now++;var e=setInterval(function(){clearInterval(e),go(now)},1e3)},1e3)}else{-1!=window.history.state.path.indexOf("/in/")&&history.back(),now++;var t=setInterval(function(){clearInterval(t),go(now)},1e3)}},2500)}}go(now);
 
 
 var counter = $("li.mn-invitation-card.mn-person-card.mn-person-card--selectable.ember-view").length;
@@ -219,6 +217,4 @@ function go(count){
     }
 }
 go(now);
-
-
-var counter=$("li.mn-person-card.connection-card.ember-view").length,now=55;function go(e){if(e>counter)var n=setInterval(function(){$("html, body").animate({scrollTop:$(document).height()},1e3),counter=$("li.mn-person-card.connection-card.ember-view").length,clearInterval(n),go(now)},1e3);else{$("li.mn-person-card.connection-card.ember-view:eq("+e+")").find("a").click();var o=setInterval(function(){if(clearInterval(o),console.log(e),-1!=$(".pv-top-card-section__location").text().toLowerCase().indexOf("india")||-1!=$(".pv-top-card-section__location").text().toLowerCase().indexOf("tunisia")||-1!=$(".pv-top-card-section__location").text().toLowerCase().indexOf("france")){$(".pv-s-profile-actions__overflow-toggle").click(),$(".pv-s-profile-actions__label:eq(3)").click(),$(".pv-s-profile-actions__label:eq(5)").click();var n=setInterval(function(){clearInterval(n),-1!=window.history.state.path.indexOf("/in/")&&history.back(),now++;var e=setInterval(function(){clearInterval(e),go(now)},1e3)},1e3)}else{-1!=window.history.state.path.indexOf("/in/")&&history.back(),now++;var t=setInterval(function(){clearInterval(t),go(now)},1e3)}},2500)}}go(now);
+var counter=$("li.mn-invitation-card.mn-person-card.mn-person-card--selectable.ember-view").length,now=20,personID="";function go(e){if(""!=personID&&($("#"+personID).find("button").click(),console.log("withdraw"+personID),personID=""),e>counter)var n=setInterval(function(){$("html, body").animate({scrollTop:$(document).height()},1e3),counter=$("li.mn-invitation-card.mn-person-card.mn-person-card--selectable.ember-view").length,clearInterval(n),go(now)},1e3);else{var o=$("li.mn-invitation-card.mn-person-card.mn-person-card--selectable.ember-view:eq("+e+")").attr("id");$("li.mn-invitation-card.mn-person-card.mn-person-card--selectable.ember-view:eq("+e+")").find("a").click();var t=setInterval(function(){clearInterval(t),console.log(e),-1!=$(".pv-top-card-section__location").text().toLowerCase().indexOf("india")||-1!=$(".pv-top-card-section__location").text().toLowerCase().indexOf("tunisia")||-1!=$(".pv-top-card-section__location").text().toLowerCase().indexOf("france")?(personID=o,console.log(e),console.log(o)):personID="";var n=setInterval(function(){clearInterval(n),-1!=window.history.state.path.indexOf("/in/")&&history.back(),now++;var e=setInterval(function(){clearInterval(e),go(now)},2e3)},1e3)},3e3)}}go(now);
