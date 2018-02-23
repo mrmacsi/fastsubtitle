@@ -151,7 +151,7 @@ function go(count){
         $("li.mn-person-card.connection-card.ember-view:eq("+count+")").find("a").click();
         var gotimer = setInterval(function () {clearInterval(gotimer);
             console.log(count);
-	    var keys = ["france","india","tunisia","bangladesh","armenia","china"];
+	    var keys = ["france","india","tunisia","bangladesh","armenia","china","korea"];
 	    var text = $(".pv-top-card-section__location").text().toLowerCase().trim();
 	    var exists = 0;
 	    $.each(keys,function(key,value){if(text.indexOf(value)!=-1){exists++;}});
@@ -210,7 +210,7 @@ function go(count){
         $("li.mn-invitation-card.mn-person-card.mn-person-card--selectable.ember-view:eq("+count+")").find("a").click();
         var gotimer = setInterval(function () {clearInterval(gotimer);
             console.log(count);
-    	    var keys = ["france","india","tunisia","bangladesh","armenia","china"];
+    	    var keys = ["france","india","tunisia","bangladesh","armenia","china","korea"];
 	    var text = $(".pv-top-card-section__location").text().toLowerCase().trim();
 	    var exists = 0;
 	    $.each(keys,function(key,value){if(text.indexOf(value)!=-1){exists++;}});
