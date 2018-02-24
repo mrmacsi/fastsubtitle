@@ -188,11 +188,9 @@ remove from sent
 
 var counter = $("li.mn-invitation-card.mn-person-card.mn-person-card--selectable.ember-view").length;
 var now = 0;
-var page = 1;
 var personID = "";
-function url(page){ $(".mn-invitation-pagination li:eq("+page+")").find("a").click();}
 function go(count){
-    if(now==100){page++;url(page);now=0;}
+    if(now==100){$(".mn-invitation-pagination li:last-child").find("a").click();now=0;}
     if(personID!=""){
         $("#"+personID).find("button").click();
         console.log("withdraw "+personID);
@@ -234,4 +232,4 @@ function go(count){
 }
 go(now);
 
-var counter=$("li.mn-invitation-card.mn-person-card.mn-person-card--selectable.ember-view").length,now=0,page=1,personID="";function url(n){$(".mn-invitation-pagination li:eq("+n+")").find("a").click()}function go(n){if(100==now&&(url(++page),now=0),""!=personID&&($("#"+personID).find("button").click(),console.log("withdraw "+personID),personID=""),n>counter)var e=setInterval(function(){$("html, body").animate({scrollTop:$(document).height()},1e3),counter=$("li.mn-invitation-card.mn-person-card.mn-person-card--selectable.ember-view").length,clearInterval(e),go(now)},1e3);else{var a=$("li.mn-invitation-card.mn-person-card.mn-person-card--selectable.ember-view:eq("+n+")").attr("id");$("li.mn-invitation-card.mn-person-card.mn-person-card--selectable.ember-view:eq("+n+")").find("a").click();var r=setInterval(function(){clearInterval(r),console.log(n);var e=$(".pv-top-card-section__location").text().toLowerCase().trim(),o=0;$.each(["france","india","tunisia","bangladesh","armenia","china","korea"],function(n,a){-1!=e.indexOf(a)&&o++}),0==o?personID="":(personID=a,o=0);var t=setInterval(function(){clearInterval(t),-1!=window.history.state.path.indexOf("/in/")&&history.back(),now++;var n=setInterval(function(){clearInterval(n),go(now)},2e3)},1e3)},3e3)}}go(now);
+var counter=$("li.mn-invitation-card.mn-person-card.mn-person-card--selectable.ember-view").length,now=0,personID="";function go(n){if(100==now&&($(".mn-invitation-pagination li:last-child").find("a").click(),now=0),""!=personID&&($("#"+personID).find("button").click(),console.log("withdraw "+personID),personID=""),n>counter)var e=setInterval(function(){$("html, body").animate({scrollTop:$(document).height()},1e3),counter=$("li.mn-invitation-card.mn-person-card.mn-person-card--selectable.ember-view").length,clearInterval(e),go(now)},1e3);else{var a=$("li.mn-invitation-card.mn-person-card.mn-person-card--selectable.ember-view:eq("+n+")").attr("id");$("li.mn-invitation-card.mn-person-card.mn-person-card--selectable.ember-view:eq("+n+")").find("a").click();var r=setInterval(function(){clearInterval(r),console.log(n);var e=$(".pv-top-card-section__location").text().toLowerCase().trim(),o=0;$.each(["france","india","tunisia","bangladesh","armenia","china","korea"],function(n,a){-1!=e.indexOf(a)&&o++}),0==o?personID="":(personID=a,o=0);var t=setInterval(function(){clearInterval(t),-1!=window.history.state.path.indexOf("/in/")&&history.back(),now++;var n=setInterval(function(){clearInterval(n),go(now)},2e3)},1e3)},3e3)}}go(now);
