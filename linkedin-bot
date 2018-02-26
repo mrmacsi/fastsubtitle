@@ -42,6 +42,8 @@ compressed
 var emptyPage=0,scroll=setInterval(function(){var e=$(document).height();if(emptyPage>16){$("#feed-tab-icon").click();var t=setInterval(function(){$("#mynetwork-tab-icon").click(),clearInterval(t),emptyPage=0},1e3)}$("html, body").animate({scrollTop:$(document).height()},1e3,function(){e==$(document).height()&&(emptyPage++,$("html, body").animate({scrollTop:0}))})},4e3),checker=setInterval(function(){$(".mn-pymk-list__card.display-flex.flex-column").not(".found").each(function(){var e=0,t=$(this).find("div a span:nth-child(2)").text().toLowerCase().trim()+" "+$(this).find("div a span").last().text().toLowerCase().trim();$.each(["software","recruitment","ceo","react","angular","java","cto "," ios","web","ux ","technology","android","programmer","coder","developer","symfony","laravel","front-end","stack","nodejs","php","asp","founder"],function(n,o){-1!=t.indexOf(o)&&e++}),$.each(["3d","business","é","chez","tunusia","mohammed","muhamed","ç","ş","ü","ğ","ö","ë","ï"],function(n,o){-1!=t.indexOf(o)&&(e=0)}),0==e?$(this).addClass("remove").find(".lazy-image").css({border:"3px solid red"}):($(this).addClass("found").find(".lazy-image").css({border:"3px solid green"}),e=0)})},1e4),close=function e(){var t=Math.round(1e3*Math.random())+50;setTimeout(function(){$("li.remove").first().find(".mn-pymk-list__close-btn").click(),e()},t)};close();var add=function e(){var t=Math.round(1e4*Math.random())+1100;setTimeout(function(){$(document).height();$("li.found").first().find(".button-secondary-small").click(),$("li.found").first().remove(),e()},t)};add();
 
 
+Hello, I am Software Engineer. I have experience in a lot of web programming language. WOuld like to see you in my connections. Thanks & Bests. Macit
+
 var count =0;
 var addVip = setInterval(function(){if(document.querySelectorAll('div i.inline .b-link.app').length!=0){count++; console.log(count); document.querySelectorAll("span[data-choice='yes']")[0].click()}else{document.querySelectorAll("span[data-choice='no']")[0].click()} }, 200);
 
@@ -267,3 +269,47 @@ go(now);
 compressed
 
 var counter=$(".search-result.search-result__occluded-item").length,now=0;function go(e){if(e>counter)$(".page-list").next().find("button").click(),go(now=0);else{$(".search-result.search-result__occluded-item:eq("+e+")").find(".search-result__info a.search-result__result-link.ember-view").click();var o=Math.round(1300*Math.random())+4e3,t=setTimeout(function(){clearInterval(t),$(".pv-s-profile-actions__overflow-toggle").click(),$(".pv-s-profile-actions__label:eq(3)").click(),$(".pv-s-profile-actions__label:eq(5)").click(),console.log(now);var e=Math.round(1200*Math.random())+1700;-1!=window.history.state.path.indexOf("/in/")&&history.back();var o=setInterval(function(){clearInterval(o),go(++now)},e)},o)}}go(now);
+
+var checker = setInterval(function () {
+clearInterval(checker);
+check();
+}, 1000);
+
+var checker = setTimeout(check, 5000);
+function check(){
+if($('li.add').length==0){
+ $('html, body').animate({scrollTop:$(document).height()},1000 ,function(){
+	$(".search-result.search-result__occluded-item.ember-view").not(".remove").each(function(){
+	var that = this,count=0, keys = ["software","recruitment","ceo","react","angular","java","cto "," ios","web","ux ","technology","android","programmer","coder","developer","symfony","laravel","front-end","stack","nodejs","php","asp","founder"],
+	except = ['3d','business','é','chez','tunusia','mohammed','muhamed','ç','ş','ü','ğ','ö','ë','ï'], text = $(this).find(".name-and-icon").text().toLowerCase().trim() +' '+$(this).find(".subline-level-1.search-result__truncate").last().text().toLowerCase().trim(); 
+	$.each(keys,function(key,value){if(text.indexOf(value)!=-1){count++;}});
+	$.each(except,function(key,value){if(text.indexOf(value)!=-1){count=0;}});
+	if(count==0){$(that).addClass("remove").find(".lazy-image").css({'border': '3px solid red'});
+	}else{
+	$(that).addClass("add").find(".lazy-image").css({'border': '3px solid green'});count=0;}
+	});
+	add();
+});
+}else{
+    	clearTimeout(checker);
+}
+}
+
+var add = function loop() {
+    var rand = Math.round(Math.random() * 4400) + 6100;
+    var try1 = setTimeout(function() {
+    	console.log(rand)
+	if($('li.add').length>0){
+	$('li.add').first().find(".button-secondary-medium.m5").click();
+	$('.button-secondary-large.mr1').click();
+	$('.send-invite__custom-message.mb3.ember-text-area.ember-view').val("Dear "+$('li.add').first().find(".name-and-icon").text().trim()+", I am Software Engineer in London. I have experience in a lot of web programming language. Would like to see you in my connections. Thanks & Bests. Macit Simsek");
+	$(".button-primary-large.ml1").click();
+	$('li.add').first().removeClass("add");
+	add(); 
+	}else{
+	$('.page-list').next().find('button').click();
+	check();
+    	} 
+    	clearTimeout(try1);
+    }, rand);
+}; 
