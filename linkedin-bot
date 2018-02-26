@@ -247,14 +247,14 @@ function go(count){
 		go(now);
     }else{
 		$('.search-result.search-result__occluded-item:eq('+count+')').find('.search-result__info a.search-result__result-link.ember-view').click();
-		var rand = Math.round(Math.random() * 1300) + 4000;
+		var rand = Math.round(Math.random() * 1368) + 10000;
 		var gotimer = setTimeout(function() { 
 		clearInterval(gotimer);
 			$(".pv-s-profile-actions__overflow-toggle").click();
 			$(".pv-s-profile-actions__label:eq(3)").click();
 			$(".pv-s-profile-actions__label:eq(5)").click();
 			console.log(now);
-			var rand2 = Math.round(Math.random() * 1200) + 1700;
+			var rand2 = Math.round(Math.random() * 1235) + 10700;
 			if(window.history.state.path.indexOf("/in/")!=-1){history.back();}
 			var gotimer3 = setInterval(function () {
 				clearInterval(gotimer3);
