@@ -11,11 +11,10 @@ var scroll = setInterval(function () {
 }, 4000);
 
 var checker = setInterval(function () {$('.mn-pymk-list__card.display-flex.flex-column').not(".found").each(function(){
-var that = this,count=0, keys = ["software","recruit","talent"],english = /^[A-Za-z0-9]*$/,
+var that = this,count=0, keys = ["software","recruit","talent","ceo","react","angular","java","cto "," ios","web","ux ","technology","android","programmer","coder","developer","symfony","laravel","front-end","stack","nodejs","php","asp","founder"],english = /^[A-Za-z0-9]*$/,
 except = ['3d','business','é','chez','tunusia','mohammed','muhamed','ç','ş','ü','ğ','ö','ë','ï'], text = $(this).find("div a span:nth-child(2)").text().toLowerCase().trim() +' '+$(this).find("div a span").last().text().toLowerCase().trim(); 
 $.each(keys,function(key,value){if(text.indexOf(value)!=-1){count++;}});
 $.each(except,function(key,value){if(text.indexOf(value)!=-1){count=0;}});
-if(!english.test(text)){count=0;}
 if(count==0){$(that).addClass("remove").find(".lazy-image").css({'border': '3px solid red'});}else{
 	$(that).addClass("found").find(".lazy-image").css({'border': '3px solid green'});count=0;}
 });}, 10000);
@@ -42,6 +41,7 @@ var add = function loop() {
 compressed 
 var emptyPage=0,scroll=setInterval(function(){var e=$(document).height();if(emptyPage>16){$("#feed-tab-icon").click();var t=setInterval(function(){$("#mynetwork-tab-icon").click(),clearInterval(t),emptyPage=0},1e3)}$("html, body").animate({scrollTop:$(document).height()},1e3,function(){e==$(document).height()&&(emptyPage++,$("html, body").animate({scrollTop:0}))})},4e3),checker=setInterval(function(){$(".mn-pymk-list__card.display-flex.flex-column").not(".found").each(function(){var e=0,t=$(this).find("div a span:nth-child(2)").text().toLowerCase().trim()+" "+$(this).find("div a span").last().text().toLowerCase().trim();$.each(["software","recruit","talent"],function(n,i){-1!=t.indexOf(i)&&e++}),$.each(["3d","business","é","chez","tunusia","mohammed","muhamed","ç","ş","ü","ğ","ö","ë","ï"],function(n,i){-1!=t.indexOf(i)&&(e=0)}),/^[A-Za-z0-9]*$/.test(t)||(e=0),0==e?$(this).addClass("remove").find(".lazy-image").css({border:"3px solid red"}):($(this).addClass("found").find(".lazy-image").css({border:"3px solid green"}),e=0)})},1e4),close=function e(){var t=Math.round(1e3*Math.random())+50;setTimeout(function(){$("li.remove").first().find(".mn-pymk-list__close-btn").click(),e()},t)};close();var add=function e(){var t=Math.round(1e4*Math.random())+1100;setTimeout(function(){$(document).height();$("li.found").first().find(".button-secondary-small").click(),$("li.found").first().remove(),e()},t)};add();
 
+//if(!english.test(text)){count=0;}
 
 //"ceo","react","angular","java","cto "," ios","web","ux ","technology","android","programmer","coder","developer","symfony","laravel","front-end","stack","nodejs","php","asp","founder"
 
