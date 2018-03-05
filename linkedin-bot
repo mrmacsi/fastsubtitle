@@ -363,3 +363,8 @@ var withdraw = function loop() {
     }, rand);
 }; withdraw();
 
+var count =0;
+document.querySelector('.sidebar-info__name.app.js-user-name').outerHTML='<span id="counter" style="background-color: red;border-radius: 100px;padding: 8px;color: white;">0</span>';
+setInterval(function(){if(document.querySelectorAll('div i.inline .b-link.app').length!=0){count++; document.querySelector('#counter').innerHTML=count; document.querySelectorAll("span[data-choice='yes']")[0].click()}else{document.querySelectorAll("span[data-choice='no']")[0].click()} }, 200);
+
+
