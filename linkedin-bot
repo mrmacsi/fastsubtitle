@@ -360,10 +360,10 @@ var checker=setInterval(function(){$(".search-result.search-result__occluded-ite
 var withdraw = function loop() {
     var rand = Math.round(Math.random() * 1320) + 3100;
 	console.log(rand);
-    setTimeout(function() {
-            $('.mn-person-card__person-btn-ext.button-tertiary-medium-muted:eq(0)').click();
-            loop();  
-    }, rand);
+	setTimeout(function() {
+	$('.invitation-card__action-btn.button-tertiary-medium-muted:eq(0)').click();
+	loop();  
+	}, rand);
 }; withdraw();
 
 var count =0;
