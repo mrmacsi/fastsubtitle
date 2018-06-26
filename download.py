@@ -26,7 +26,7 @@ def download(url_array): # TODO: unittest
     #RETURN DOWNLOADED PICTURE COUNT
     return count
 
-if __name__=="__main__":
+if __name__=="__main__": #CHECK IF FILE DIRECTLY EXECUTED
     if not len(sys.argv)>1: #CHECK IF ARGUMENT EXISTS
 	print("Please enter file name")
 	sys.exit(1)
