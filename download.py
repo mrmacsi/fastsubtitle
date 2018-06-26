@@ -3,6 +3,7 @@
 """ DOWNLOAD PICTURES FROM TEXT FILE """
 import sys
 import os.path
+import os
 import urllib
 
 FOLDER_NAME = "pictures/" #CONSTANT FOLDER NAME
@@ -26,7 +27,21 @@ def download(url_array): # TODO: unittest
     #RETURN DOWNLOADED PICTURE COUNT
     return count
 
-if __name__=="__main__": #CHECK IF FILE DIRECTLY EXECUTED
+#PARAM url_array
+def DownloadsExists(url_array): # TODO: improve the unit test
+    """ CHECK DOWNLOADED PICTURES ARE EXISTS IN FOLDER """
+    checked = 0
+    list_of_directory = os.listdir(FOLDER_NAME) #GET LIST OF FILES IN THE DIRECTORY
+    for picture_url in url_array:
+        if not picture_url == "":
+            _ , filename = picture_url.rsplit("/", 1)
+            for per_file in list_of_directory:
+                if filename == per_file:
+                    checked += 1
+    #RETURN CHECKED PICTURE COUNT
+    return checked
+
+if __name__=="__main__":
     if not len(sys.argv)>1: #CHECK IF ARGUMENT EXISTS
 	print("Please enter file name")
 	sys.exit(1)
@@ -58,3 +73,9 @@ if __name__=="__main__": #CHECK IF FILE DIRECTLY EXECUTED
     if len(url_lines)>0: #IF ARRAY LENGTH MORE THAN 0
         count = download(url_lines)
         print str(count) + " Pictures downloaded"
+
+    if len(url_lines)>0: #UNIT TEST THE DOWNLOADED FILES
+        print "Unit Test Started"
+        test_count = DownloadsExists(url_lines)
+        if test_count == count:
+            print "Downloaded " + str(test_count) + " Pictures are exists in the folder."
