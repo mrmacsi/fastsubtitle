@@ -37,7 +37,7 @@ def DownloadsExists(url_array): # TODO: improve the unit test
             _ , filename = picture_url.rsplit("/", 1)
             for per_file in list_of_directory:
                 if filename == per_file:
-                    checked += 1
+                    checked += 1 #IF MATCHES INCREASE THE COUNT
     #RETURN CHECKED PICTURE COUNT
     return checked
 
