@@ -27,20 +27,20 @@ def download(url_array): # TODO: unittest
     return count
 
 if __name__=="__main__":
-    if not len(sys.argv)>1: #CHECK
+    if not len(sys.argv)>1: #CHECK IF ARGUMENT EXISTS
 	print("Please enter file name")
 	sys.exit(1)
 
-    txtName = sys.argv[1]
-    if txtName=="":
+    txtName = sys.argv[1].strip()
+    if txtName=="": #CHECK FILE NAME EMPTY
         print("Please enter a file name")
         sys.exit(1)
 
-    if not os.path.isfile(txtName):
+    if not os.path.isfile(txtName): #CHECK FILE EXISTS
         print("File Doesn't exists")
         sys.exit(1)
 
-    if not os.path.isdir(FOLDER_NAME):
+    if not os.path.isdir(FOLDER_NAME): #CHECK DOWNLOAD FOLDER EXISTS
         try:
             os.makedirs(FOLDER_NAME)
             print("Pictures folder created")
