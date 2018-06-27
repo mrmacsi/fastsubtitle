@@ -16,7 +16,7 @@ def download(url_array): # TODO: unittest
         if not picture_url == "":
             ret = urllib.urlopen(picture_url) #CHECK IF URL IS EXISTS
 
-            if ret.code == 200:
+            if ret.code == 200: #CHECK IF RESPONSE CODE OK
                 _ , filename = picture_url.rsplit("/", 1) #GET FILE NAME
                 # filename = picture_url[picture_url.rfind("/")+1:]
                 print "Downloading..." + picture_url + " in " + FOLDER_NAME
