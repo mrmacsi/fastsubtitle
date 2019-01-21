@@ -1,0 +1,47 @@
+var counter = $("li.search-result.search-result__occluded-item.ember-view").length;
+var now = 0;
+function go(count){
+    if(count>counter){
+        var scroll = setInterval(function () {
+            $('html, body').animate({scrollTop:$(document).height()},1000);
+            counter = $("li.search-result.search-result__occluded-item.ember-view").length;
+            clearInterval(scroll);
+            go(now);
+        }, 1000);
+    }else{
+        $("li.search-result.search-result__occluded-item.ember-view:eq("+count+")").find("a.search-result__result-link:eq(1)").click();
+		var gotimer = setInterval(function () {
+			console.log("here1")
+			clearInterval(gotimer);
+			console.log(count);
+			var keys = ["france","ukraine","india","tunisia","bangladesh","armenia","china","korea"];
+			var text = $(".pv-top-card-section__location").text().toLowerCase().trim();
+			var exists = 0;
+			$.each(keys,function(key,value){if(text.indexOf(value)!=-1){exists++;}});
+			if(exists==0){
+					if(window.history.state.path.indexOf("/in/")!=-1){history.back();}
+					now++;
+					var gotimer3 = setInterval(function () {
+						clearInterval(gotimer3);
+						go(now);
+					}, 1000);
+			}else{
+				$(".pv-s-profile-actions__overflow-toggle").click();
+				$(".pv-s-profile-actions__label:contains('Unfollow'), .pv-s-profile-actions__label:contains('Remove')").each(function(){
+					$(this).click();
+				});
+				var gotimer2 = setInterval(function () {
+					clearInterval(gotimer2);
+					if(window.history.state.path.indexOf("/in/")!=-1){history.back();}
+					now++;
+					var gotimer3 = setInterval(function () {
+						clearInterval(gotimer3);
+						go(now);
+					}, 1000);
+				}, 1000);
+			}
+        }, 8000);
+		if(count>5){now=0;}
+    }
+}
+go(now);
