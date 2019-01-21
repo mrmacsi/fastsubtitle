@@ -1,0 +1,71 @@
+var step = 0;
+var add,scroll,checker;
+
+var setCheckerFunc = function () {
+$('li.search-result.ember-view').each(function(){
+var title = $(this).find(".subline-level-1").text().toLowerCase().trim().indexOf("recruit")!=-1;
+var title2 = $(this).find(".subline-level-1").text().toLowerCase().trim().indexOf("consultant")!=-1;
+var buttonDisabled=$(this).find(".button-secondary-medium.m5").prop("disabled");
+if((title2 || title) && !buttonDisabled){
+$(this).addClass("add");
+}else{
+$(this).remove();
+}
+});
+	clearInterval(checker);
+	$('html, body').animate({scrollTop:0});
+	step=2;
+};
+
+var addFunction = function () {
+var message = "It seems that we are both in the same industry and from reading through your LinkedIn profile, I think you could add some real value to my network.\nIt would be great to connect with you.\nBest regards,\nMacit Simsek";
+if($('li.add').length>0){
+	$('li.search-result.ember-view').first().find(".button-secondary-medium.m5").click();
+	$('.button-secondary-large.mr1').click();
+	$('.send-invite__custom-message.mb3.ember-text-area.ember-view').val("Hi "+$('li.search-result.ember-view').first().find(".name-and-icon .name.actor-name").text().trim().split(" ")[0]+", "+ message);
+	$(".button-primary-large.ml1").prop("disabled",false).click();
+	$('li.search-result.ember-view').first().remove();
+}else{
+	$('.page-list').next().find('button').click();
+	clearInterval(add);
+	step=4;
+} 
+};
+
+
+var scrollFunc = function () {
+	var hintCount = $(".search-result__occlusion-hint").length;
+	var height = $(document).height();
+	if(hintCount>0){
+		$('html, body').animate({scrollTop:$(document).height()},700 ,function(){
+			if(height==$(document).height()){
+			$('html, body').animate({scrollTop:0});
+			}
+		});
+	}else{
+	clearInterval(scroll);
+	step=1;
+	console.log(step)
+	}
+};
+
+function start(){
+if(step==0){
+console.log(step)
+scroll = setInterval(scrollFunc, 2000);
+}else if(step==1){
+checker = setInterval(setCheckerFunc, 1000);
+console.log(step)
+}else if(step==2){
+add = setInterval(addFunction, 22000);
+step=3;
+console.log(step)
+}else if(step==3){
+console.log(step)
+}else if(step==4){
+console.log(step)
+step=0;
+console.log(step)
+}
+}
+setInterval(start, 7000);
