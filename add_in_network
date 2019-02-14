@@ -1,8 +1,9 @@
-var emptyPage = 0; 
+var emptyPage = 0, limit = 0; ; 
+var time = new Date().getHours();
 var scroll = setInterval(function () {
-if($('li.found').length<50){
+if($('li.found').length<20){
 var height = $(document).height();
-	if(emptyPage>16 && $('li.found').length==0){
+	if(emptyPage>20 && $('li.found').length==0){
 	$('#feed-tab-icon').click();
 	var comeback = setInterval(function () {$('#mynetwork-tab-icon').click();clearInterval(comeback);emptyPage=0;}, 1000);
 	}
@@ -18,14 +19,14 @@ var height = $(document).height();
 
 var checker = setInterval(function () {
 $('.mn-discovery-entity-card.mn-discovery-entity-card--with-coverphoto.ember-view').not(".found").each(function(){
-var that = this,count=0, keys = ["software","recruit","talent","ceo","cto ","founder","consultant"],
+var that = this,count=0, keys = ["recruit","talent","ceo","cto ","founder","consultant"],
 except = ['3d','business','é','chez','tunusia','mohammed','muhamed','ç','ş','ü','ğ','ö','ë','ï'], 
 text = $(this).find("div a span:nth-child(2)").text().toLowerCase().trim() +' '+$(this).find("div a span").last().text().toLowerCase().trim(); 
 $.each(keys,function(key,value){if(text.indexOf(value)!=-1){count++;}});
 $.each(except,function(key,value){if(text.indexOf(value)!=-1){count=0;}});
 if(count==0){$(this).addClass("remove").find(".lazy-image").css({'border': '3px solid red'});}else{
 	$(this).addClass("found").find(".lazy-image").css({'border': '3px solid green'});count=0;}
-});}, 1000);
+});}, 4000);
 
 
 var close = function loopClose() {
@@ -40,8 +41,14 @@ var close = function loopClose() {
 var add = function loop() {
     var rand = Math.round(Math.random() * 10000) + 1100;
     setTimeout(function() {
-            var height = $(document).height();
-			$('li.found').first().find(".artdeco-button--full.artdeco-button--secondary").click();
-            loop();  
+	if(time!=new Date().getHours()){
+		limit=0;
+		time = new Date().getHours();
+	}
+	if(limit<85){
+		$('li.found').first().find(".artdeco-button--full.artdeco-button--secondary").click();
+		limit++;
+	}
+    loop();  
     }, rand);
 }; add();
