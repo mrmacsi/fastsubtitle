@@ -18,7 +18,7 @@ $(this).remove();
 };
 
 var addFunction = function () {
-var message = "It seems that we are both in the same industry and from reading through your LinkedIn profile, I think you could add some real value to my network.\nIt would be great to connect with you.\nBest regards,\nMacit Simsek";
+var message = "I am looking for contract job opportunities and from reading through your LinkedIn profile, I think you could add some real value to my network.\nIt would be great to connect with you.\nBest regards,\nMacit Simsek";
 if($('li.add').length>0){
 	$('li.search-result.ember-view').first().find(".button-secondary-medium.m5").click();
 	$('.button-secondary-large.mr1').click();
