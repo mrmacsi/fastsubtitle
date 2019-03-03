@@ -27,7 +27,7 @@ var scroll = setInterval(function () {
 
 var checker = setInterval(function () {
     $('.mn-discovery-entity-card.mn-discovery-entity-card--with-coverphoto.ember-view').not(".found").each(function(){
-    var that = this,count=0, keys = ["recruit","talent","ceo","cto ","founder","consultant"],
+    var that = this,count=0, keys = ["recruit","talent","software","ceo","cto ","founder","consultant"],
     except = ['3d','business','é','chez','tunusia','mohammed','muhamed','ç','ş','ü','ğ','ö','ë','ï'], 
     text = $(this).find("div a span:nth-child(2)").text().toLowerCase().trim() +' '+$(this).find("div a span").last().text().toLowerCase().trim(); 
     $.each(keys,function(key,value){if(text.indexOf(value)!=-1){count++;}});
