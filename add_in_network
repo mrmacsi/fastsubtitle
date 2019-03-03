@@ -39,16 +39,17 @@ var close = function loopClose() {
 
 
 var add = function loop() {
-    if($(".ip-fuse-limit-alert__primary-action").length==0){
         var rand = Math.round(Math.random() * 10000) + 1100;
         setTimeout(function() {
+    	if($(".ip-fuse-limit-alert__primary-action").length==0){
             $('li.found').first().find(".artdeco-button--full.artdeco-button--secondary").click();
             time = new Date().getHours();
             loop();  
-        }, rand);
-    }else{
+    	}else{
 		if(time != new Date().getHours()){//close te popup
+			time = new Date().getHours();
 			$(".ip-fuse-limit-alert__primary-action").click()
 		}
 	}
+        }, rand);
 }; add();
