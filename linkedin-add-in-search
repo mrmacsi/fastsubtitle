@@ -6,8 +6,9 @@ var setCheckerFunc = function () {
 $('li.search-result.ember-view').each(function(){
 var title = $(this).find(".subline-level-1").text().toLowerCase().trim().indexOf("recruit")!=-1;
 var title2 = $(this).find(".subline-level-1").text().toLowerCase().trim().indexOf("consultant")!=-1;
+var title3 = $(this).find(".subline-level-1").text().toLowerCase().trim().indexOf("contract")!=-1;
 var buttonDisabled=$(this).find(".button-secondary-medium.m5").prop("disabled");
-if((title2 || title) && !buttonDisabled){
+if((title3 || title2 || title) && !buttonDisabled){
 $(this).addClass("add");
 }else{
 $(this).remove();
@@ -22,7 +23,7 @@ var addFunction = function () {
     if($(".ip-fuse-limit-alert__primary-action").length==0){
         var message = "I am looking for it contract job opportunities and from reading through your LinkedIn profile, I think you could hhahve some open positions.\nIt would be great to connect with you.\nBest regards,\nMacit Simsek";
         if($('li.add').length>0){
-            $('li.search-result.ember-view').first().find(".button-secondary-medium.m5").click();
+            $('li.search-result.ember-view').first().find(".search-result__action-button").click();
             $('.button-secondary-large.mr1').click();
             $('.send-invite__custom-message.mb3.ember-text-area.ember-view').val("Hello "+$('li.search-result.ember-view').first().find(".name-and-icon .name.actor-name").text().trim().split(" ")[0]+", "+ message);
             $(".button-primary-large.ml1").prop("disabled",false).click();
@@ -77,4 +78,3 @@ console.log(step)
 }
 }
 setInterval(start, 7000);
-
