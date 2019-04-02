@@ -1,375 +1,80 @@
-var emptyPage = 0; 
-var scroll = setInterval(function () {
-if($('li.found').length<100){
-var height = $(document).height();
-	if(emptyPage>16 && $('li.found').length==0){
-	$('#feed-tab-icon').click();
-	var comeback = setInterval(function () {$('#mynetwork-tab-icon').click();clearInterval(comeback);emptyPage=0;}, 1000);
-	}
-	$('html, body').animate({scrollTop:$(document).height()},1000 ,function(){
-		if(height==$(document).height()){
-		emptyPage++;
-		$('html, body').animate({scrollTop:0});
-		}
-	});
-	}
-}, 4000);
+var step = 0; 
+var add,scroll,checker;
+var time = new Date().getHours();
 
-var checker = setInterval(function () {$('.mn-pymk-list__card.display-flex.flex-column').not(".found").each(function(){
-var that = this,count=0, keys = ["software","recruit","talent","ceo","react","angular","java","cto "," ios","web","ux ","technology","android","programmer","coder","developer","symfony","laravel","front-end","stack","nodejs","php","asp","founder"],english = /^[A-Za-z0-9]*$/,
-except = ['3d','business','é','chez','tunusia','mohammed','muhamed','ç','ş','ü','ğ','ö','ë','ï'], text = $(this).find("div a span:nth-child(2)").text().toLowerCase().trim() +' '+$(this).find("div a span").last().text().toLowerCase().trim(); 
-$.each(keys,function(key,value){if(text.indexOf(value)!=-1){count++;}});
-$.each(except,function(key,value){if(text.indexOf(value)!=-1){count=0;}});
-if(count==0){$(that).addClass("remove").find(".lazy-image").css({'border': '3px solid red'});}else{
-	$(that).addClass("found").find(".lazy-image").css({'border': '3px solid green'});count=0;}
-});}, 10000);
-
-var close = function loopClose() {
-    var rand = Math.round(Math.random() * 1000) + 50;
-    setTimeout(function() {
-			$('li.remove').first().find('.pymk-card__close-btn').click()
-            loopClose();  
-    }, rand);
-}; close();
-
-var add = function loop() {
-    var rand = Math.round(Math.random() * 10000) + 1100;
-    setTimeout(function() {
-            var height = $(document).height();
-			$('li.found').first().find(".button-secondary-small").click();
-			$('li.found').first().remove();
-            loop();  
-    }, rand);
-}; add();
-
-
-compressed 
-var emptyPage=0,scroll=setInterval(function(){if($("li.found").length<100){var e=$(document).height();if(emptyPage>16&&0==$("li.found").length){$("#feed-tab-icon").click();var t=setInterval(function(){$("#mynetwork-tab-icon").click(),clearInterval(t),emptyPage=0},1e3)}$("html, body").animate({scrollTop:$(document).height()},1e3,function(){e==$(document).height()&&(emptyPage++,$("html, body").animate({scrollTop:0}))})}},4e3),checker=setInterval(function(){$(".mn-pymk-list__card.display-flex.flex-column").not(".found").each(function(){var e=0,t=$(this).find("div a span:nth-child(2)").text().toLowerCase().trim()+" "+$(this).find("div a span").last().text().toLowerCase().trim();$.each(["software","recruit","talent","ceo","react","angular","java","cto "," ios","web","ux ","technology","android","programmer","coder","developer","symfony","laravel","front-end","stack","nodejs","php","asp","founder"],function(n,o){-1!=t.indexOf(o)&&e++}),$.each(["3d","business","é","chez","tunusia","mohammed","muhamed","ç","ş","ü","ğ","ö","ë","ï"],function(n,o){-1!=t.indexOf(o)&&(e=0)}),0==e?$(this).addClass("remove").find(".lazy-image").css({border:"3px solid red"}):($(this).addClass("found").find(".lazy-image").css({border:"3px solid green"}),e=0)})},1e4),close=function e(){var t=Math.round(1e3*Math.random())+50;setTimeout(function(){$("li.remove").first().find(".pymk-card__close-btn").click(),e()},t)};close();var add=function e(){var t=Math.round(1e4*Math.random())+1100;setTimeout(function(){$(document).height();$("li.found").first().find(".button-secondary-small").click(),$("li.found").first().remove(),e()},t)};add();
-
-//if(!english.test(text)){count=0;}
-
-//"ceo","react","angular","java","cto "," ios","web","ux ","technology","android","programmer","coder","developer","symfony","laravel","front-end","stack","nodejs","php","asp","founder"
-
-Hello, I am Software Engineer. I have experience in a lot of web programming language. WOuld like to see you in my connections. Thanks & Bests. Macit
-
-var count =0;
-var addVip = setInterval(function(){if(document.querySelectorAll('div i.inline .b-link.app').length!=0){count++; console.log(count); document.querySelectorAll("span[data-choice='yes']")[0].click()}else{document.querySelectorAll("span[data-choice='no']")[0].click()} }, 200);
-
-clearInterval(addVip);
-
-document.querySelectorAll('div i.inline .b-link.app');
-
-if(document.querySelectorAll('div i.inline .b-link.app').length!=0){document.querySelectorAll("span[data-choice='yes']")[0].click()}else{document.querySelectorAll("span[data-choice='no']")[0].click()}
-
-document.querySelectorAll("span[data-choice='yes']")[0].click()
-document.querySelectorAll("span[data-choice='no']")[0].click()
-
-
-clearInterval(scroll);clearInterval(checker);
-
-var checker = setInterval(function () {
-$('.message-anywhere-button').each(function(){
-var that = this,count=0, keys = ["software","recruitment","ceo","react","angular","java","cto "," ios","web","ux ","technology","android","programmer","coder","developer","symfony","laravel","front-end","stack","nodejs","php","asp","founder"],
-text = $(this).parent().parent().find(".mn-person-info__details").children().find("a span").last().text().toLowerCase(); 
-$.each(keys,function(key,value){
-if(text.indexOf(value)!=-1 && text.indexOf("3d")==-1 && text.indexOf("business")==-1 && text.indexOf("é")==-1){
-$(that).parent().parent().parent().addClass("found").css({'background':'yellow'});count++;
-}});
-if(count==0){$(that).parent().parent().parent().addClass("remove").css({'background':'#f77474'});}else{count=0;}
-});
-}, 10000);
-
-$('.button-secondary-small').each(function(){$(this).click();})
-
-var scroll = setInterval(function () {$(document).scrollTop($(document).height());}, 100)
-var checker = setInterval(function () {$('.mn-person-card div div a').each(function(){
-var that = this,count=0, keys = ["software","recruitment","ceo","react","angular","java","cto "," ios","web","ux ","technology","android","programmer","coder","developer","symfony","laravel","front-end","stack","nodejs","php","asp","founder"],
-text = $(this).find("span").last().text().toLowerCase(); 
-$.each(keys,function(key,value){
-if(text.indexOf(value)!=-1 && text.indexOf("3d")==-1 && text.indexOf("business")==-1 && text.indexOf("é")==-1){
-$(that).parent().parent().addClass("found").css({'background':'yellow'});count++;
-}});
-if(count==0){$(that).parent().parent().addClass("found").css({'background':'red'});}else{count=0;}
-});}, 5000)
-
-
-
-	A.push([new Date(), document.querySelector("#main > header > div.chat-body > div:nth-child(2) span").innerHTML]);
-kontrol if online
-
-var checker = setInterval(function () {$('div.chat-body').find('div').length;}, 5000)
-
-var A = [['time','html']];
-function addArray(){
-	var selection = document.querySelector("#main > header > div.chat-body > div:nth-child(2) span") !== null;
-	if(selection){
-	A.push([new Date(), selection.innerHTML]);
-	}
-}
-function getCSV() {
-	var csvRows = [];
-	if(A.length>1){
-	for(var i=0, l=A.length; i<l; ++i){
-		csvRows.push(A[i].join(','));
-	}
-	var csvString = csvRows.join("%0A");
-	var a         = document.createElement('a');
-	a.href        = 'data:attachment/csv,' + csvString;
-	a.target      = '_blank';
-	a.download    = 'myFile.csv';
-
-	document.body.appendChild(a);
-	a.click();
-	document.body.removeChild(a);
-	A = [['time','html']];
-	}
-}
-
-setInterval(function(){ addArray(); }, 2000);
-setInterval(function(){ getCSV(); }, 20000);
-
-var checker = setInterval(function () {
-$('.mn-person-card.connection-card.ember-view .mn-person-info__details').each(function(){
-	var that = this;
-	var count = 0;
-	var except = ['business','é','chez','ë','ï'];
-	var text = $(this).find("a span:nth-child(2)").text().toLowerCase().trim()+' '+$(this).find("a span").last().text().toLowerCase().trim(); 
-	$.each(except,function(key,value){
-		if(text.indexOf(value)!=-1){
-			count++;
-			console.log(text)
-			$(that).css({'background':'yellow'});
-		}
-	});
-});
-}
-, 18000);
-
-remove from connections
-
-var counter = $("li.mn-person-card.connection-card.ember-view").length;
-var now = 0;
-function go(count){
-    if(count>counter){
-        var scroll = setInterval(function () {
-            $('html, body').animate({scrollTop:$(document).height()},1000);
-            counter = $("li.mn-person-card.connection-card.ember-view").length;
-            clearInterval(scroll);
-            go(now);
-        }, 1000);
-    }else{
-        $("li.mn-person-card.connection-card.ember-view:eq("+count+")").find("a").click();
-        var gotimer = setInterval(function () {clearInterval(gotimer);
-            console.log(count);
-	    var keys = ["france","india","tunisia","bangladesh","armenia","china","korea"];
-	    var text = $(".pv-top-card-section__location").text().toLowerCase().trim();
-	    var exists = 0;
-	    $.each(keys,function(key,value){if(text.indexOf(value)!=-1){exists++;}});
-	    if(exists==0){
-                if(window.history.state.path.indexOf("/in/")!=-1){history.back();}
-                now++;
-                var gotimer3 = setInterval(function () {
-                    clearInterval(gotimer3);
-                    go(now);
-                }, 1000);
-	    }else{
-                $(".pv-s-profile-actions__overflow-toggle").click();
-                $(".pv-s-profile-actions__label:eq(3)").click();
-                $(".pv-s-profile-actions__label:eq(5)").click();
-                var gotimer2 = setInterval(function () {
-                    clearInterval(gotimer2);
-                    if(window.history.state.path.indexOf("/in/")!=-1){history.back();}
-                    now++;
-                    var gotimer3 = setInterval(function () {
-                        clearInterval(gotimer3);
-                        go(now);
-                    }, 1000);
-                }, 1000);
-		exists=0;
-	    }
-        }, 2500);
-    }
-}
-go(now);
-
-var counter=$("li.mn-person-card.connection-card.ember-view").length,now=0;function go(e){if(e>counter)var n=setInterval(function(){$("html, body").animate({scrollTop:$(document).height()},1e3),counter=$("li.mn-person-card.connection-card.ember-view").length,clearInterval(n),go(now)},1e3);else{$("li.mn-person-card.connection-card.ember-view:eq("+e+")").find("a").click();var o=setInterval(function(){clearInterval(o),console.log(e);var n=$(".pv-top-card-section__location").text().toLowerCase().trim(),t=0;if($.each(["france","india","tunisia","bangladesh","armenia","china","korea"],function(e,o){-1!=n.indexOf(o)&&t++}),0==t){-1!=window.history.state.path.indexOf("/in/")&&history.back(),now++;var a=setInterval(function(){clearInterval(a),go(now)},1e3)}else{$(".pv-s-profile-actions__overflow-toggle").click(),$(".pv-s-profile-actions__label:eq(3)").click(),$(".pv-s-profile-actions__label:eq(5)").click();var i=setInterval(function(){clearInterval(i),-1!=window.history.state.path.indexOf("/in/")&&history.back(),now++;var e=setInterval(function(){clearInterval(e),go(now)},1e3)},1e3);t=0}},2500)}}go(now);
-
-remove from sent
-
-var counter = $("li.mn-invitation-card.mn-person-card.mn-person-card--selectable.ember-view").length;
-var now = 0;
-var personID = "";
-function go(count){
-    if(now==100){$(".mn-invitation-pagination li:last-child").find("a").click();now=0;}
-    if(personID!=""){
-        $("#"+personID).find("button").click();
-        console.log("withdraw "+personID);
-        personID = "";
-    }
-    if(count>counter){
-        var scroll = setInterval(function () {
-            $('html, body').animate({scrollTop:$(document).height()},1000);
-            counter = $("li.mn-invitation-card.mn-person-card.mn-person-card--selectable.ember-view").length;
-            clearInterval(scroll);
-            go(now);
-        }, 1000);
-    }else{
-        var temp =$("li.mn-invitation-card.mn-person-card.mn-person-card--selectable.ember-view:eq("+count+")").attr("id");
-        $("li.mn-invitation-card.mn-person-card.mn-person-card--selectable.ember-view:eq("+count+")").find("a").click();
-        var gotimer = setInterval(function () {clearInterval(gotimer);
-            console.log(count);
-    	    var keys = ["france","india","tunisia","bangladesh","armenia","china","korea"];
-	    var text = $(".pv-top-card-section__location").text().toLowerCase().trim();
-	    var exists = 0;
-	    $.each(keys,function(key,value){if(text.indexOf(value)!=-1){exists++;}});
-	    if(exists==0){
-                personID = "";
-	    }else{
-                personID=temp;
-		exists=0;
-	    }
-            var gotimer2 = setInterval(function () {
-                clearInterval(gotimer2);
-                if(window.history.state.path.indexOf("/in/")!=-1){history.back();}
-                now++;
-                var gotimer3 = setInterval(function () {
-                    clearInterval(gotimer3);
-                    go(now);
-                }, 2000);
-            }, 1000);
-        }, 3000);
-    }
-}
-go(now);
-
-var counter=$("li.mn-invitation-card.mn-person-card.mn-person-card--selectable.ember-view").length,now=0,personID="";function go(n){if(100==now&&($(".mn-invitation-pagination li:last-child").find("a").click(),now=0),""!=personID&&($("#"+personID).find("button").click(),console.log("withdraw "+personID),personID=""),n>counter)var e=setInterval(function(){$("html, body").animate({scrollTop:$(document).height()},1e3),counter=$("li.mn-invitation-card.mn-person-card.mn-person-card--selectable.ember-view").length,clearInterval(e),go(now)},1e3);else{var a=$("li.mn-invitation-card.mn-person-card.mn-person-card--selectable.ember-view:eq("+n+")").attr("id");$("li.mn-invitation-card.mn-person-card.mn-person-card--selectable.ember-view:eq("+n+")").find("a").click();var r=setInterval(function(){clearInterval(r),console.log(n);var e=$(".pv-top-card-section__location").text().toLowerCase().trim(),o=0;$.each(["france","india","tunisia","bangladesh","armenia","china","korea"],function(n,a){-1!=e.indexOf(a)&&o++}),0==o?personID="":(personID=a,o=0);var t=setInterval(function(){clearInterval(t),-1!=window.history.state.path.indexOf("/in/")&&history.back(),now++;var n=setInterval(function(){clearInterval(n),go(now)},2e3)},1e3)},3e3)}}go(now);
-
-remove from search
-
-var counter = $(".search-result.search-result__occluded-item").length;
-var now = 0;
-function go(count){
-    if(count>counter){
-        $('.page-list').next().find('button').click();
-		now =0;
-		go(now);
-    }else{
-		$('.search-result.search-result__occluded-item:eq('+count+')').find('.search-result__info a.search-result__result-link.ember-view').click();
-		var rand = Math.round(Math.random() * 1368) + 10000;
-		var gotimer = setTimeout(function() { 
-		clearInterval(gotimer);
-			$(".pv-s-profile-actions__overflow-toggle").click();
-			$(".pv-s-profile-actions__label:eq(3)").click();
-			$(".pv-s-profile-actions__label:eq(5)").click();
-			console.log(now);
-			var rand2 = Math.round(Math.random() * 1235) + 10700;
-			if(window.history.state.path.indexOf("/in/")!=-1){history.back();}
-			var gotimer3 = setInterval(function () {
-				clearInterval(gotimer3);
-				now++;
-				go(now);
-			}, rand2);
-		}, rand);
-    }
-}
-go(now);
-
-compressed
-
-var counter=$(".search-result.search-result__occluded-item").length,now=0;function go(e){if(e>counter)$(".page-list").next().find("button").click(),go(now=0);else{$(".search-result.search-result__occluded-item:eq("+e+")").find(".search-result__info a.search-result__result-link.ember-view").click();var o=Math.round(1368*Math.random())+1e4,t=setTimeout(function(){clearInterval(t),$(".pv-s-profile-actions__overflow-toggle").click(),$(".pv-s-profile-actions__label:eq(3)").click(),$(".pv-s-profile-actions__label:eq(5)").click(),console.log(now);var e=Math.round(1235*Math.random())+10700;-1!=window.history.state.path.indexOf("/in/")&&history.back();var o=setInterval(function(){clearInterval(o),go(++now)},e)},o)}}go(now);
-
-var checker = setInterval(function () {
-clearInterval(checker);
-check();
-}, 1000);
-
-var checker = setTimeout(check, 5000);
-function check(){
-if($('li.add').length==0){
- $('html, body').animate({scrollTop:$(document).height()},1000 ,function(){
-	$(".search-result.search-result__occluded-item.ember-view").not(".remove").each(function(){
-	var that = this,count=0, keys = ["software","recruitment","ceo","react","angular","java","cto "," ios","web","ux ","technology","android","programmer","coder","developer","symfony","laravel","front-end","stack","nodejs","php","asp","founder"],
-	except = ['3d','business','é','chez','tunusia','mohammed','muhamed','ç','ş','ü','ğ','ö','ë','ï'], text = $(this).find(".name-and-icon").text().toLowerCase().trim() +' '+$(this).find(".subline-level-1.search-result__truncate").last().text().toLowerCase().trim(); 
-	$.each(keys,function(key,value){if(text.indexOf(value)!=-1){count++;}});
-	$.each(except,function(key,value){if(text.indexOf(value)!=-1){count=0;}});
-	if(count==0){$(that).addClass("remove").find(".lazy-image").css({'border': '3px solid red'});
-	}else{
-	$(that).addClass("add").find(".lazy-image").css({'border': '3px solid green'});count=0;}
-	});
-	add();
-});
+var setCheckerFunc = function () {
+$('li.search-result.ember-view').each(function(){
+var title = $(this).find(".subline-level-1").text().toLowerCase().trim().indexOf("recruit")!=-1;
+var title2 = $(this).find(".subline-level-1").text().toLowerCase().trim().indexOf("consultant")!=-1;
+var title3 = $(this).find(".subline-level-1").text().toLowerCase().trim().indexOf("contract")!=-1;
+var buttonDisabled=$(this).find(".search-result__action-button").prop("disabled");
+if((title3 || title2 || title) && !buttonDisabled){
+$(this).addClass("add");
 }else{
-    	clearTimeout(checker);
+$(this).remove();
 }
-}
+});
+	clearInterval(checker);
+	$('html, body').animate({scrollTop:0});
+	step=2;
+};
 
-var add = function loop() {
-    var rand = Math.round(Math.random() * 4400) + 6100;
-    var try1 = setTimeout(function() {
-    	console.log(rand)
-	if($('li.add').length>0){
-	$('li.add').first().find(".button-secondary-medium.m5").click();
-	$('.button-secondary-large.mr1').click();
-	$('.send-invite__custom-message.mb3.ember-text-area.ember-view').val("Dear "+$('li.add').first().find(".name-and-icon").text().trim()+", I am Software Engineer in London. I have experience in a lot of web programming language. Would like to see you in my connections. Thanks & Bests. Macit Simsek");
-	$(".button-primary-large.ml1").click();
-	$('li.add').first().removeClass("add");
-	add(); 
-	}else{
-	$('.page-list').next().find('button').click();
-	check();
-    	} 
-    	clearTimeout(try1);
-    }, rand);
-}; 
-
-var checker = setInterval(function () {
-$(".search-result.search-result__occluded-item.ember-view").not(".remove").each(function(){
-	var that = this,count=0, keys = ["software","recruitment","ceo","react","angular","java","cto "," ios","web","ux ","technology","android","programmer","coder","developer","symfony","laravel","front-end","stack","nodejs","php","asp","founder"],
-	except = ['3d','business','é','chez','tunusia','mohammed','muhamed','ç','ş','ü','ğ','ö','ë','ï'], text = $(this).find(".name-and-icon").text().toLowerCase().trim() +' '+$(this).find(".subline-level-1.search-result__truncate").last().text().toLowerCase().trim(); 
-	if($(this).find(".button-secondary-medium.m5").prop("disabled")){
-	$(that).removeClass("add").addClass("remove").find(".lazy-image").css({'border': '3px solid red'});
-	}else{
-	$.each(keys,function(key,value){if(text.indexOf(value)!=-1){count++;}});
-	$.each(except,function(key,value){if(text.indexOf(value)!=-1){count=0;}});
-	if(count==0){$(that).addClass("remove").find(".lazy-image").css({'border': '3px solid red'});
-	}else{
-	$(that).addClass("add").find(".lazy-image").css({'border': '3px solid green'});count=0;}
+var addFunction = function () {
+    if($(".ip-fuse-limit-alert__primary-action").length==0){
+        var message = "I am looking for it contract job opportunities and from reading through your LinkedIn profile, I think you could hhahve some open positions.\nIt would be great to connect with you.\nBest regards,\nMacit Simsek";
+        if($('li.add').length>0){
+            $('li.search-result.ember-view').first().find(".search-result__action-button").click();
+            $('.button-secondary-large.mr1').click();
+            $('.send-invite__custom-message.mb3.ember-text-area.ember-view').val("Hello "+$('li.search-result.ember-view').first().find(".name-and-icon .name.actor-name").text().trim().split(" ")[0]+", "+ message);
+            $(".button-primary-large.ml1").prop("disabled",false).click();
+            $('li.search-result.ember-view').first().remove();
+        }else{
+            $('.artdeco-pagination__button--next').click();
+            clearInterval(add);
+            step=4;
+        } 
+		time = new Date().getHours();
+    }else{
+		if(time != new Date().getHours()){//close te popup
+			$(".ip-fuse-limit-alert__primary-action").click()
+		}
 	}
-	});
-}, 1000);
+};
 
-var scroll = setInterval(function () {
+
+var scrollFunc = function () {
+	var hintCount = $(".search-result__occlusion-hint").length;
 	var height = $(document).height();
-	$('html, body').animate({scrollTop:$(document).height()});
-}, 1000);
+	if(hintCount>0){
+		$('html, body').animate({scrollTop:$(document).height()},700 ,function(){
+			if(height==$(document).height()){
+			$('html, body').animate({scrollTop:0});
+			}
+		});
+	}else{
+	clearInterval(scroll);
+	step=1;
+	console.log(step)
+	}
+};
 
-var add = setInterval(function () {
-if($('li.add').length>0){
-	$('li.add').first().find(".button-secondary-medium.m5").click();
-	$('.button-secondary-large.mr1').click();
-	$('.send-invite__custom-message.mb3.ember-text-area.ember-view').val("Dear "+$('li.add').first().find(".name-and-icon").text().trim()+", I am Software Engineer in London. I have experience in a lot of web programming language. Would like to see you in my connections. Thanks & Bests. Macit Simsek");
-	$(".button-primary-large.ml1").prop("disabled",false).click();
-	$('li.add').first().removeClass("add").addClass("remove").find(".lazy-image").css({'border': '3px solid red'});
-}else{
-	$('.page-list').next().find('button').click();
-} 
-}, 15000);
-
-var checker=setInterval(function(){$(".search-result.search-result__occluded-item.ember-view").not(".remove").each(function(){var e=this,a=0,n=$(this).find(".name-and-icon").text().toLowerCase().trim()+" "+$(this).find(".subline-level-1.search-result__truncate").last().text().toLowerCase().trim();$(this).find(".button-secondary-medium.m5").prop("disabled")?$(e).removeClass("add").addClass("remove").find(".lazy-image").css({border:"3px solid red"}):($.each(["software","recruitment","ceo","react","angular","java","cto "," ios","web","ux ","technology","android","programmer","coder","developer","symfony","laravel","front-end","stack","nodejs","php","asp","founder"],function(e,d){-1!=n.indexOf(d)&&a++}),$.each(["3d","business","é","chez","tunusia","mohammed","muhamed","ç","ş","ü","ğ","ö","ë","ï"],function(e,d){-1!=n.indexOf(d)&&(a=0)}),0==a?$(e).addClass("remove").find(".lazy-image").css({border:"3px solid red"}):($(e).addClass("add").find(".lazy-image").css({border:"3px solid green"}),a=0))})},1e3),scroll=setInterval(function(){$(document).height();$("html, body").animate({scrollTop:$(document).height()})},1e3),add=setInterval(function(){$("li.add").length>0?($("li.add").first().find(".button-secondary-medium.m5").click(),$(".button-secondary-large.mr1").click(),$(".send-invite__custom-message.mb3.ember-text-area.ember-view").val("Dear "+$("li.add").first().find(".name-and-icon").text().trim()+", I am Software Engineer in London. I have experience in a lot of web programming language. Would like to see you in my connections. Thanks & Bests. Macit Simsek"),$(".button-primary-large.ml1").prop("disabled",!1).click(),$("li.add").first().removeClass("add").addClass("remove").find(".lazy-image").css({border:"3px solid red"})):$(".page-list").next().find("button").click()},15e3);
-
-//withdraw
-
-var withdraw = function loop() {
-    var rand = Math.round(Math.random() * 1320) + 3100;
-	console.log(rand);
-	setTimeout(function() {
-	$('.invitation-card__action-btn.button-tertiary-medium-muted:eq(0)').click();
-	loop();  
-	}, rand);
-}; withdraw();
-
-var count =0;
-document.querySelector('.sidebar-info__name.app.js-user-name').outerHTML='<span id="counter" style="background-color: red;border-radius: 100px;padding: 8px;color: white;">0</span>';
-setInterval(function(){if(document.querySelectorAll('div i.inline .b-link.app').length!=0){count++; document.querySelector('#counter').innerHTML=count; document.querySelectorAll("span[data-choice='yes']")[0].click()}else{document.querySelectorAll("span[data-choice='no']")[0].click()} }, 200);
-
-
+function start(){
+if(step==0){
+console.log(step)
+scroll = setInterval(scrollFunc, 2000);
+}else if(step==1){
+checker = setInterval(setCheckerFunc, 1000);
+console.log(step)
+}else if(step==2){
+add = setInterval(addFunction, 22000);
+step=3;
+console.log(step)
+}else if(step==3){
+console.log(step)
+}else if(step==4){
+console.log(step)
+step=0;
+console.log(step)
+}
+}
+setInterval(start, 7000);
